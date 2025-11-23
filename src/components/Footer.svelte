@@ -1,4 +1,4 @@
-<footer class="p-5">
+<footer class="col-span-2 mt-20">
   <div class="columns-3">
     <ul>Links</ul>
     <ul>some Links</ul>

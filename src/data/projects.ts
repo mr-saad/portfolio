@@ -3,7 +3,7 @@ export default [
     title: "Ratan Bandhej",
     desc: "A Bandhani Handicraft E-Commerce Website",
     img: "ratanbandhej.png",
-    url: "https://ratanbandhej.shop",
+    url: "https://ratanbandhej.vercel.app",
   },
   {
     title: "Arora Mud Art",
@@ -22,5 +22,11 @@ export default [
     desc: "A Portfolio Website",
     img: "zyrogfx.png",
     url: "https://zyrogfx.vercel.app",
+  },
+  {
+    title: "Aainal Bandhani",
+    desc: "Bandhani Tie and Dye E-Commerce Website",
+    img: "aainalbandhani.png",
+    url: "https://aainalbandhani.vercel.app",
   },
 ]

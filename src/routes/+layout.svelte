@@ -10,8 +10,10 @@
   <title>Saad Khatri | Portfolio</title>
 </svelte:head>
 
-<Navbar />
-<main>
-  {@render children()}
-</main>
-<Footer />
+<div class="grid md:grid-cols-[auto_1fr]">
+  <Navbar />
+  <main class="md:overflow-y-auto md:h-screen p-5">
+    {@render children()}
+    <Footer />
+  </main>
+</div>

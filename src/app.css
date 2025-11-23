@@ -18,3 +18,15 @@
     BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
     "Open Sans", "Helvetica Neue", sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: #f7e5e5;
+  background-image: repeating-radial-gradient(
+      circle at 0 0,
+      transparent 0,
+      #f7e5e5 10px
+    ),
+    repeating-linear-gradient(#f7444429, #f7444400);
+}
