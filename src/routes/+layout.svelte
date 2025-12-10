@@ -12,8 +12,8 @@
 
 <div class="grid md:grid-cols-[auto_1fr]">
   <Navbar />
-  <main class="md:overflow-y-auto md:h-screen p-5">
-    {@render children()}
+  <main class="md:overflow-y-auto md:h-screen">
+    <div class="p-5">{@render children()}</div>
     <Footer />
   </main>
 </div>

@@ -1,7 +1,27 @@
-<nav class="p-5 md:sticky top-0 content-center">
-  <div class="grid grid-cols-2 mb-5">
-    <h1 class="font-bold text-xl">Saad Khatri</h1>
-    <div class="flex justify-self-end justify-center gap-2">
+<script lang="ts">
+  import { page } from "$app/state"
+  import { onMount } from "svelte"
+
+  let pathname = $state(page.url.hash)
+
+  function updateHash() {
+    pathname = window.location.hash
+  }
+
+  onMount(() => {
+    window.addEventListener("hashchange", updateHash)
+    return () => window.removeEventListener("hashchange", updateHash)
+  })
+</script>
+
+<nav class="p-5 z-2 sticky top-0 bg-[#111] text-[#888]">
+  <div class="grid grid-cols-2 md:grid-cols-1 gap-5 mb-5">
+    <h1 class="font-bold text-xl md:text-3xl highlight">
+      <a href="#home">Saad Khatri</a>
+    </h1>
+    <div
+      class="flex justify-self-end md:justify-self-start justify-center gap-2"
+    >
       <a
         aria-label="Saad Khatri's GitHub Handle"
         href="https://github.com/mr-saad"
@@ -49,10 +69,28 @@
     </div>
   </div>
   <ul class="flex flex-wrap md:grid sm:gap-5 gap-x-5">
-    <li><a href="/">Home</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#something">Something</a></li>
+    <li>
+      <a
+        class={`${pathname === "" || pathname === "#home" ? "text-white" : ""}`}
+        href="#home">Home</a
+      >
+    </li>
+    <li>
+      <a
+        class={`${pathname === "#projects" ? "text-white" : ""}`}
+        href="#projects">Projects</a
+      >
+    </li>
+    <li>
+      <a class={`${pathname === "#about" ? "text-white" : ""}`} href="#about"
+        >About</a
+      >
+    </li>
+    <li>
+      <a
+        class={`${pathname === "#contact" ? "text-white" : ""}`}
+        href="#contact">Contact</a
+      >
+    </li>
   </ul>
 </nav>
