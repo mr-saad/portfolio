@@ -38,7 +38,7 @@
           alt={project.title}
         />
         <div class="p-5">
-          <h5 class="font-bold text-2xl mt-2">{project.title}</h5>
+          <h5 class="font-bold text-2xl">{project.title}</h5>
           <p>{project.desc}</p>
         </div>
       </a>
