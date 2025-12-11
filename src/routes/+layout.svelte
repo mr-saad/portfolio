@@ -1,7 +1,7 @@
 <script lang="ts">
   import "../app.css"
   import Footer from "../components/Footer.svelte"
-  import Navbar from "../components/Navbar.svelte"
+  import Sidebar from "../components/Sidebar.svelte"
 
   const { children } = $props()
 </script>
@@ -11,9 +11,11 @@
 </svelte:head>
 
 <div class="grid md:grid-cols-[auto_1fr]">
-  <Navbar />
-  <main class="md:overflow-y-auto md:h-screen">
-    <div class="p-5">{@render children()}</div>
+  <Sidebar />
+  <main>
+    <div class="p-5 md:min-h-screen">
+      {@render children()}
+    </div>
     <Footer />
   </main>
 </div>

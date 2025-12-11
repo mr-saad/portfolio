@@ -1,23 +1,18 @@
 <script lang="ts">
   import { page } from "$app/state"
-  import { onMount } from "svelte"
+  let pathname = $derived(page.url.pathname)
 
-  let pathname = $state(page.url.hash)
-
-  function updateHash() {
-    pathname = window.location.hash
-  }
-
-  onMount(() => {
-    window.addEventListener("hashchange", updateHash)
-    return () => window.removeEventListener("hashchange", updateHash)
-  })
+  const links = [
+    { label: "Projects", href: "/projects" },
+    { label: "About", href: "/about" },
+    { label: "Contact", href: "/contact" },
+  ]
 </script>
 
 <nav class="p-5 z-2 sticky top-0 bg-[#111] text-[#888]">
   <div class="grid grid-cols-2 md:grid-cols-1 gap-5 mb-5">
     <h1 class="font-bold text-xl md:text-3xl highlight">
-      <a href="#home">Saad Khatri</a>
+      <a href="/">Saad Khatri</a>
     </h1>
     <div
       class="flex justify-self-end md:justify-self-start justify-center gap-2"
@@ -70,27 +65,35 @@
   </div>
   <ul class="flex flex-wrap md:grid sm:gap-5 gap-x-5">
     <li>
-      <a
-        class={`${pathname === "" || pathname === "#home" ? "text-white" : ""}`}
-        href="#home">Home</a
-      >
+      <a class={`${pathname === "/" ? "text-white" : ""}`} href="/">Home</a>
+    </li>
+    {#each links as link}
+      <li>
+        <a
+          class={`${pathname.startsWith(link.href) ? "text-white" : ""}`}
+          href={link.href}>{link.label}</a
+        >
+      </li>
+    {/each}
+    <!-- <li>
+      <a class={`${pathname === "/" ? "text-white" : ""}`} href="/">Home</a>
     </li>
     <li>
       <a
-        class={`${pathname === "#projects" ? "text-white" : ""}`}
-        href="#projects">Projects</a
+        class={`${pathname.startsWith("/projects") ? "text-white" : ""}`}
+        href="/projects">Projects</a
       >
     </li>
     <li>
-      <a class={`${pathname === "#about" ? "text-white" : ""}`} href="#about"
+      <a class={`${pathname === "/about" ? "text-white" : ""}`} href="/about"
         >About</a
       >
     </li>
     <li>
       <a
-        class={`${pathname === "#contact" ? "text-white" : ""}`}
-        href="#contact">Contact</a
+        class={`${pathname === "/contact" ? "text-white" : ""}`}
+        href="/contact">Contact</a
       >
-    </li>
+    </li> -->
   </ul>
 </nav>
