@@ -4,4 +4,8 @@
   const { data }: PageProps = $props()
 </script>
 
+<svelte:head>
+  <title>Projects | Saad Khatri</title>
+</svelte:head>
+
 <Projects projects={data.projects} />

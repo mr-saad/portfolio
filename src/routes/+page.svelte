@@ -1,12 +1,10 @@
 <script lang="ts">
   import me from "$lib/images/me.png"
-  import About from "../components/About.svelte"
-  import Contact from "../components/Contact.svelte"
-  import Projects from "../components/Projects.svelte"
-  import type { PageProps } from "./$types"
-
-  const { data }: PageProps = $props()
 </script>
+
+<svelte:head>
+  <title>Saad Khatri | Fullstack Web Developer</title>
+</svelte:head>
 
 <div
   id="home"
@@ -24,8 +22,4 @@
     alt="Saad Khatri"
   />
 </div>
-<div class="mt-20 grid gap-20">
-  <Projects projects={data.projects} />
-  <Contact />
-  <About />
-</div>
+<div class="mt-20 grid gap-20"></div>

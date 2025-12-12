@@ -1,12 +1,7 @@
 <script lang="ts">
   import { page } from "$app/state"
   let pathname = $derived(page.url.pathname)
-
-  const links = [
-    { label: "Projects", href: "/projects" },
-    { label: "About", href: "/about" },
-    { label: "Contact", href: "/contact" },
-  ]
+  const { links } = $props()
 </script>
 
 <nav class="p-5 z-2 sticky top-0 bg-[#111] text-[#888]">
@@ -66,6 +61,12 @@
   <ul class="flex flex-wrap md:grid sm:gap-5 gap-x-5">
     <li>
       <a class={`${pathname === "/" ? "text-white" : ""}`} href="/">Home</a>
+    </li>
+    <li>
+      <a
+        class={`${pathname === "/projects" ? "text-white" : ""}`}
+        href="/projects">Projects</a
+      >
     </li>
     {#each links as link}
       <li>

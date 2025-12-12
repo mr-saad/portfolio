@@ -6,7 +6,6 @@
   const { project } = data
 </script>
 
-<!-- <div class="p-5 rounded-md shadow-md border border-black/10"> -->
 <h2 class="text-2xl">{project.title}</h2>
 <p class="mb-5">{project.desc}</p>
 <img
@@ -19,4 +18,3 @@
 <div class="prose">
   <PortableText value={project.body} />
 </div>
-<!-- </div> -->
