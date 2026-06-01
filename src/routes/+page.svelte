@@ -1,25 +1,21 @@
 <script lang="ts">
-  import me from "$lib/images/me.png"
+  import About from "$lib/components/sections/About.svelte"
+  import Contact from "$lib/components/sections/Contact.svelte"
+  import Hero from "$lib/components/sections/Hero.svelte"
+  import Projects from "$lib/components/sections/Projects.svelte"
+  import Skills from "$lib/components/sections/Skills.svelte"
+  import type { PageProps } from "./$types"
+  const { data }: PageProps = $props()
 </script>
 
 <svelte:head>
   <title>Saad Khatri | Fullstack Web Developer</title>
 </svelte:head>
 
-<div
-  id="home"
-  class="flex flex-col md:flex-row gap-20 md:items-center overflow-clip scroll-m-30 md:scroll-m-4"
->
-  <div>
-    <h2 class="text-3xl font-bold">I'm Saad</h2>
-    <h3 class="text-xl font-bold">Fullstack Web Developer</h3>
-    <p class="opacity-80">Aspirant</p>
-  </div>
-  <img
-    class="max-w-full grayscale border-b"
-    width="500"
-    src={me}
-    alt="Saad Khatri"
-  />
+<div class="grid gap-10">
+  <Hero />
+  <Projects projects={data.projects} />
+  <Skills />
+  <About />
+  <Contact />
 </div>
-<div class="mt-20 grid gap-20"></div>

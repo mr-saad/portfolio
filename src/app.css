@@ -1,22 +1,14 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-@font-face {
-  font-family: Hanken Grotesk;
-  src: url("/fonts/HankenGrotesk-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: Hanken Grotesk;
-  src: url("/fonts/HankenGrotesk-SemiBold.ttf") format("truetype");
-  font-weight: bold;
-  font-display: swap;
-}
-
 * {
+  --tw-prose-headings: #fff;
+  --tw-prose-body: #cecece;
+  --tw-prose-bold: #fff;
+  --tw-prose-links: #fff;
+
   font-family:
-    Hanken Grotesk,
+    "Geist Variable",
     ui-sans-serif,
     system-ui,
     -apple-system,
@@ -32,19 +24,20 @@
   scroll-behavior: smooth;
 }
 
-nav a:hover {
-  color: #fff;
-  transition: 300ms ease;
+html {
+  color-scheme: dark;
 }
-.highlight {
-  @apply text-white;
+
+body {
+  @apply text-white/60 bg-black;
 }
-/* body {
-  background-color: #f7e5e5;
-  background-image: repeating-radial-gradient(
-      circle at 0 0,
-      transparent 0,
-      #f7e5e5 10px
-    ),
-    repeating-linear-gradient(#f7444429, #f7444400);
-} */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+b,
+strong {
+  @apply text-white tracking-tight;
+}
